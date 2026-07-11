@@ -6,6 +6,7 @@ import { getAllItems } from "../services/api";
 import { useEffect, useState } from "react";
 
 export default function ItemScreen({ navigation }){
+  console.log("CLASE - ItemScreen");
 
   const [items,setItems] = useState([]);
   const [loading,setloaging] =useState(true);

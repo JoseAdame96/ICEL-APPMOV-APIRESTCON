@@ -4,22 +4,45 @@
 // IMPORTACIONES NECESARIAS
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { createItem } from "../services/api";
 
 export default function AddItemScreen({ navigation, onAddItem }){
-    const [title, setTitle] = useState('');
+  console.log("CLASE - AddItemScreen");
+
+  const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   function handleSave() {
     if (title.trim() === '' || description.trim() === '') {
+      console.log("Item vacio");
       return;
     }
-
-    onAddItem({
-      title: title,
-      description: description,
-    });
+    else {
+      onAddItem({
+        title: title.trim(),
+        description: description,
+      });
+      console.log("Elementos agregados en body");
+      const bodyItem = {
+        title: title.trim(),
+        description: description
+      };
+      addItem(bodyItem);
+    }
 
     navigation.navigate('Items');
+  }
+
+  async function addItem(bodyItem) {
+  console.log("log on add item", bodyItem)
+    try{
+      console.log("Llamada a peticion");
+      const data = await createItem(bodyItem);
+      console.log(data);
+      console.log("Peticion finalizada");
+    }catch(err){
+      console.log("Peticion no realizada 01: ", err.message);
+    }
   }
  
    return (

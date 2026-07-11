@@ -3,10 +3,11 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export default  function HomeScreen( {navigation} ) {
+  console.log("CLASE - HomeScreen");
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>App de navegación</Text>
-            <Text style={styles.subtitle}>Datos locales</Text>
+            <Text style={styles.title}>App de navegación y conexión con API</Text>
+            <Text style={styles.subtitle}>Práctica 4</Text>
 
             <Pressable style={styles.button}
             onPress={() => navigation.navigate('Items')}>
