@@ -1,5 +1,7 @@
 // ADAME CRUZ JOSE MARIA
 // 000087493
+
+// IMPORTACIONES NECESARIAS
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 

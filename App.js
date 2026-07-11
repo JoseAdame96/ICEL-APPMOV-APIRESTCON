@@ -13,6 +13,7 @@ import ItemScreen from './screens/ItemsScreen';
 import DetailScreen from './screens/DetailScreen';
 import AddItemScreen from './screens/AddItemScreen';
 
+// DECLARACION DE CONSTANTES
 const Stack = createNativeStackNavigator();
 const initialItems = [
   {
