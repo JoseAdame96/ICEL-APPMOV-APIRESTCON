@@ -31,14 +31,13 @@ export default function DetailScreen({route, navigation}){
   }
   else {
     const bodyItem = {
-      id: idItem,
       title: title.trim(),
       description: description
     };
 
     try{
       console.log("Llamada a peticion");
-      const data = await deleteItemById(idItem);
+      const data = await updateItemById(idItem, bodyItem);
       console.log(data);
       console.log("Peticion finalizada");
     }catch(err){
@@ -52,7 +51,7 @@ export default function DetailScreen({route, navigation}){
   console.log("log del item", idItem)
     try{
       console.log("Llamada a peticion");
-      const data = await updateItemById(idItem);
+      const data = await deleteItemById(idItem);
       console.log(data);
       console.log("Peticion finalizada");
     }catch(err){
